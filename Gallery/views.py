@@ -35,6 +35,19 @@ class GalleryByClientList(ListView):
         return context
 
 
+class GalleriesFromEmail(ListView):
+    model = Gallery
+    template_name = "Gallery/galleries_by_client_list.html"
+
+    def get_queryset(self, **kwargs):
+        return Gallery.objects.filter(client__email=self.request.GET.get('email', ''))
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['client'] = Client.objects.get(email=self.request.GET.get('email', ''))
+        return context
+
+
 class PictureByGalleryList(ListView):
     model = Picture
     template_name = "Gallery/pictures_by_gallery_list.html"
