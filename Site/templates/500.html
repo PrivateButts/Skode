@@ -1,0 +1,31 @@
+{% load raven %}
+{% extends 'base.html' %}
+
+{% block title %}
+    Error 500
+{% endblock title %}
+
+
+{% block body %}
+    We're sorry, but there was on error with your request.
+{% endblock body %}
+
+
+{% block script %}
+    {{ block.super }}
+
+    <!-- Sentry JS SDK 2.1.+ required -->
+    <script src="https://cdn.ravenjs.com/2.3.0/raven.min.js"></script>
+
+    {% if request.sentry.id %}
+    <script>
+    Raven.showReportDialog({
+        eventId: '{{ request.sentry.id }}',
+        dsn: 'https://2c49510804ca4612aa19667b51187302@sentry.io/1255985'
+    });
+    </script>
+    {% endif %}
+{% endblock script %}
+    
+    
+    
