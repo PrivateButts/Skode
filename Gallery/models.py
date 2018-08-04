@@ -4,6 +4,8 @@ from django.db import models
 class Event(models.Model):
     name = models.CharField(max_length=200)
     date = models.DateField()
+
+    featured = models.ForeignKey('Picture', blank=True, null=True, on_delete=models.SET_NULL, related_name="featured_set")
     
     def __str__(self):
         return "%s (%s)" % (self.name, self.date)

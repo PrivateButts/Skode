@@ -1,0 +1,15 @@
+.gallery-list-item{
+    height: 300px;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-top: 15px;
+}
+
+.gallery-list-caption{
+    background-color:rgba(0,0,0,.6);
+    color: white;
+    font-family: Raleway, Helvetica, Arial, sans-serif;
+    text-align: center;
+    padding: 15px;
+}
