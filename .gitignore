@@ -104,3 +104,6 @@ venv.bak/
 
 local.env
 *.sqlite3
+
+/static
+/media
