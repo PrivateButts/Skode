@@ -4,6 +4,7 @@
 
 {% block extra_head %}
     {{ block.super }}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'Site/home.css' %}">
 {% endblock extra_head %}
     
@@ -41,7 +42,29 @@
 
     <div class="container">
         <div class="row">
-            
+            <div class="col-md-4">
+                <div class="card home-card">
+                    <i class="fa fa-camera"></i>
+                    <h5>PROFESSIONAL PHOTOGRAPHY</h5>
+                    <p>Stunning photos that leave you with lasting memories. For a place on your wall and a place in your heart.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card home-card">
+                    <i class="fa fa-magic"></i>
+                    <h5>WARDROBE INCLUDED</h5>
+                    <p>Choose from our selection of adorable bandanas and other accessories to make your sweetheart look even more adorable.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card home-card">
+                    <i class="fa fa-heart"></i>
+                    <h5>AWWS GUARANTEED</h5>
+                    <p>Love your pictures, or we'll keep trying until you do! Smile and say "Aww"!</p>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock body %}

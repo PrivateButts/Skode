@@ -1,3 +1,17 @@
 .carousel-item{
     height:100%;
 }
+
+.home-card{
+    margin-top:15px;
+    padding: 15px;
+    text-align: center;
+}
+
+.home-card > i{
+    font-size: 54px;
+    margin-bottom: 15px;
+    text-align: center;
+    display: block;
+    color: #dd3333;
+}
