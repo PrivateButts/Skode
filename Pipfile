@@ -6,8 +6,12 @@ name = "pypi"
 [packages]
 django = "*"
 pillow = "*"
+python-dotenv = "*"
+dj-database-url = "*"
 
 [dev-packages]
+coverage = "*"
+coveralls = "*"
 
 [requires]
 python_version = "3.6"

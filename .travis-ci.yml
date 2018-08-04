@@ -1,11 +1,17 @@
 language: python
+cache: pip
 python:
   - "3.6"
 
 before_install:
   - pip install pipenv
-install:
-  - pipenv install
 
+install:
+  - pipenv install --dev
+  - echo "DATABASE_URL=sqlite:///db.sqlite3" >> local.env
+  - python -c "import string, random; uni = string.ascii_letters + string.digits + string.punctuation; print('\nSECRET_KEY='+repr(''.join([random.SystemRandom().choice(uni) for i in range(random.randint(45, 50))])))" >> local.env
+  - python manage.py migrate
 script:
-  - pipenv run python manage.py test
+  - pipenv run coverage run --source='.' manage.py test
+after_success:
+  - pipenv run coveralls
