@@ -21,6 +21,10 @@ class Price(models.Model):
     ))
     price = models.FloatField()
 
+    @property
+    def formatted_price(self):
+        return "${:.2f}".format(self.price)
+
     def __str__(self):
         return self.name
 

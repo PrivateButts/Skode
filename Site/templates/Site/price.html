@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block container %}
+    <h3>Print Prices</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Print Type</th>
+                <th>Print Size</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for price in object_list %}
+                <tr>
+                    <td>{{ price.name }}</td>
+                    <td>{{ price.get_print_type_display }}</td>
+                    <td>{{ price.get_print_size_display }}</td>
+                    <td>{{ price.formatted_price }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock container %}
+    
