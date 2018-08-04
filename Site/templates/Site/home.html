@@ -11,6 +11,7 @@
 
 
 {% block body %}
+    <!-- Carousel -->
     <div class="container-fluid p-0">
         <div id="homePageCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -40,6 +41,7 @@
         </div>
     </div>
 
+    <!-- Service Cards -->
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -64,6 +66,27 @@
                     <h5>AWWS GUARANTEED</h5>
                     <p>Love your pictures, or we'll keep trying until you do! Smile and say "Aww"!</p>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Find gallery form -->
+    <div class="container" style="margin-top:15px;">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Find your Galleries</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Enter your email below to find any galleries associated with it.</h6>
+                <form class="form-inline">
+                    <div class="form-group mb-2">
+                        <label for="EmailSearch" class="">Email</label>
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="EmailSearch" class="sr-only">Password</label>
+                        <input type="email" class="form-control" id="EmailSearch" placeholder="Email">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Search</button>
+                </form>
+                <small id="EmailSearch" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
         </div>
     </div>
