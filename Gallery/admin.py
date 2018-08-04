@@ -1,21 +1,24 @@
 from django.contrib import admin
 
-from .models import Event, Client, Picture
+from .models import Event, Client, Picture, Gallery
 
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
     model = Event
-    list_display = ['name', 'date']
+    list_display = ['pk', 'name', 'date']
 
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
     model = Client
-    list_display = ['name', 'email']
+    list_display = ['pk', 'name', 'email']
 
 
-@admin.register(Picture)
-class PictureAdmin(admin.ModelAdmin):
-    model = Picture
-    list_display = ['title', 'event', 'client']
+@admin.register(Gallery)
+class GalleryAdmin(admin.ModelAdmin):
+    model = Gallery
+    list_display = ['pk', 'event', 'client']
+
+
+admin.site.register(Picture)

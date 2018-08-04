@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block container %}
+    <div class="breadcrumbs">
+        / Event: <a href="/gallery/event/{{ object.gallery.event.pk }}">{{ object.gallery.event.name }}</a> / 
+        Client: <a href="/gallery/client/{{ object.gallery.client.pk }}">{{ object.gallery.client.name }}</a> /
+        Gallery: <a href="/gallery/{{ object.gallery.pk }}">{{ object.gallery.name }}</a> /
+    </div>
+    <img src="/media/{{ object.image }}" alt="">
+{% endblock container %}
+    

@@ -19,12 +19,18 @@ class Client(models.Model):
         return "%s <%s>" % (self.name, self.email)
 
 
-class Picture(models.Model):
-    title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to="doggos")
-
+class Gallery(models.Model):
+    name = models.CharField(max_length=200)
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return self.name
+
+
+class Picture(models.Model):
+    gallery = models.ForeignKey(Gallery, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="doggos")
+
+    def __str__(self):
+        return self.image.name
