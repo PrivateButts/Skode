@@ -9,6 +9,7 @@ pillow = "*"
 python-dotenv = "*"
 dj-database-url = "*"
 raven = "*"
+"mysqlclient" = "*"
 
 [dev-packages]
 coverage = "*"
