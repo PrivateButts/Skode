@@ -13,6 +13,14 @@ class Home(TemplateView):
         return context
 
 
+class About(TemplateView):
+    template_name = "Site/about.html"
+
+
+class Sessions(TemplateView):
+    template_name = "Site/sessions.html"
+
+
 class PriceTable(ListView):
     model = Price
     template_name = "Site/price.html"
