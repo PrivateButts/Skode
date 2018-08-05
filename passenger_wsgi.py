@@ -1,5 +1,13 @@
 import sys, os, subprocess
-INTERP = subprocess.check_output('pipenv --py', shell=True).strip().decode()
+
+# Import local environmental varbs
+from dotenv import load_dotenv
+from pathlib import Path  # python3 only
+env_path = Path('.') / 'local.env'
+load_dotenv(dotenv_path=env_path)
+load_dotenv()
+
+INTERP = os.getenv('PYTHON_PATH')
 #INTERP is present twice so that the new python interpreter knows the actual executable path
 if sys.executable != INTERP: os.execl(INTERP, INTERP, *sys.argv)
 
