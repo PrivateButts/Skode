@@ -13,7 +13,6 @@ class GalleryInline(admin.StackedInline):
     extra = 0
 
 
-
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
     model = Client
@@ -27,13 +26,18 @@ class GalleryAdmin(admin.ModelAdmin):
     model = Gallery
     list_display = ['pk', 'event', 'client']
     list_filter = ['event', 'client']
-    search_fields = ['pk', 'event__name', 'event__date', 'client__name', 'client__email']
+    search_fields = [
+        'pk',
+        'event__name',
+        'event__date',
+        'client__name',
+        'client__email'
+    ]
     inlines = [PictureInline]
     extra = 0
 
 
 admin.site.register(Picture)
-
 
 
 @admin.register(Event)

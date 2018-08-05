@@ -16,6 +16,8 @@ django-grappelli = "*"
 coverage = "*"
 coveralls = "*"
 pylint = "*"
+pylint-django = "*"
+"pep8" = "*"
 
 [requires]
 python_version = "3.6"
