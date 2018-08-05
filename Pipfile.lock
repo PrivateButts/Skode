@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2e93c35dbd0d7eab0f44a63fd4a1db03bd1544580355ecbf89222f7c2b5578f4"
+            "sha256": "984de70090d9202e744f40326724eb944aca80b749a5e1e06726425b7cb30bab"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -31,6 +31,22 @@
             ],
             "index": "pypi",
             "version": "==2.1"
+        },
+        "django-grappelli": {
+            "hashes": [
+                "sha256:a0ac5a5f1eef64a0147c3dade02f55667a01aa7e84b93c2e8f6195117b980516",
+                "sha256:e867d4b5df0e2ecebf50feba5723284f6441a9a76541c6840378020540b9570a"
+            ],
+            "index": "pypi",
+            "version": "==2.11.1"
+        },
+        "django-nested-admin": {
+            "hashes": [
+                "sha256:512850d6fc30bdc5c8f35b7faf5f94482fa4f0bda365eb1aaa35c2e52caf1851",
+                "sha256:cbd451560ca95be87eeee3ec04fcbfca95185596620bd9e3cc5d027075efd43c"
+            ],
+            "index": "pypi",
+            "version": "==3.0.21"
         },
         "mysqlclient": {
             "hashes": [
@@ -103,6 +119,13 @@
             "index": "pypi",
             "version": "==0.9.0"
         },
+        "python-monkey-business": {
+            "hashes": [
+                "sha256:6d4cf47f011945db838ccf04643acd49b82f7ad6ab7ecba4c8165385687a828a",
+                "sha256:9976522989766f00b2aaa24ec96eacb91a6de7b7001d1452079323b071988e0e"
+            ],
+            "version": "==1.0.0"
+        },
         "pytz": {
             "hashes": [
                 "sha256:a061aa0a9e06881eb8b3b2b43f05b9439d6583c206d0a6c340ff72a7b6669053",
@@ -117,6 +140,13 @@
             ],
             "index": "pypi",
             "version": "==6.9.0"
+        },
+        "six": {
+            "hashes": [
+                "sha256:70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9",
+                "sha256:832dc0e10feb1aa2c68dcc57dbb658f1c7e65b9b61af69048abc87a2db00a0eb"
+            ],
+            "version": "==1.11.0"
         }
     },
     "develop": {

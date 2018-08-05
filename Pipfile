@@ -10,6 +10,7 @@ python-dotenv = "*"
 dj-database-url = "*"
 raven = "*"
 "mysqlclient" = "*"
+django-grappelli = "*"
 
 [dev-packages]
 coverage = "*"
