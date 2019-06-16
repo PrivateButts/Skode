@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, reverse
 from django.views.generic import ListView, DetailView
 
-from .models import Client, Event, Picture, Gallery
+from .models import Client, Event, Picture, Gallery, PricePoint
+from Site.models import CartItem
 
 
 class EventList(ListView):
@@ -71,4 +72,16 @@ class PictureDetails(DetailView):
 
 def AddPrintsToCart(request):
     prints = request.POST.getlist('PriceOptions')
+    pictures = request.POST.getlist('Pictures')
+
+    for picturePK in pictures:
+        picture = Picture.objects.get(pk=picturePK)
+        for itemPK in prints:
+            price = PricePoint.objects.get(pk=itemPK)
+            CartItem.objects.create(
+                content_object=picture,
+                user=request.user,
+                price=price.price
+            )
+
     return redirect('Site:Cart')

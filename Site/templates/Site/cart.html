@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block container %}
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Tax</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in object_list %}
+                        <tr>
+                            <td>{{ item.category_content_object }}: Photo #{{ item.item_content_object.pk }}</td>
+                            <td>{{ item.price }}</td>
+                            <td>{{ item.tax }}</td>
+                            <td>{{ item.total }}</td>
+                            <td><button class="btn btn-danger">Remove</button></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3">
+            <div class="bg-light border">
+                <h3>Cart Summery</h3>
+                
+            </div>
+        </div>
+    </div>
+{% endblock container %}
+    

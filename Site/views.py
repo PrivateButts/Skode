@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
 
-from .models import CarouselItem
+from .models import CarouselItem, CartItem, Order
 from Gallery.models import PricePoint
 
 
@@ -25,3 +25,8 @@ class Sessions(TemplateView):
 class PriceTable(ListView):
     model = PricePoint
     template_name = "Site/price.html"
+
+
+class Cart(ListView):
+    model = CartItem
+    template_name = "Site/cart.html"

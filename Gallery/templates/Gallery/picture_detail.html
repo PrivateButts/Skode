@@ -21,6 +21,7 @@
                 
                 <form method="POST" action="{% url 'Gallery:AddPrintsToCart' %}">
                     {% csrf_token %}
+                    <input type="hidden" name="Pictures" value='{{ object.pk }}' />
                     {% for pricePoint in object.gallery.price_points.all %}
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="PriceOptions{{pricePoint.pk}}" name="PriceOptions" value="{{pricePoint.pk}}">

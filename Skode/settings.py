@@ -150,3 +150,5 @@ if DEBUG:
     handler = ThumbnailLogHandler()
     handler.setLevel(logging.ERROR)
     logging.getLogger('sorl.thumbnail').addHandler(handler)
+
+TAX_RATE = .08
