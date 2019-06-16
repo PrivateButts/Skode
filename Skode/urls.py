@@ -22,7 +22,7 @@ from django.contrib import admin
 
 urlpatterns = [
     path('grappelli/', include('grappelli.urls')),
-    url(r'^admin/', admin.site.urls),
-    url(r'^gallery/', include('Gallery.urls')),
-    url(r'^', include('Site.urls')),
+    path('admin/', admin.site.urls),
+    path('gallery/', include('Gallery.urls', namespace="Gallery")),
+    path('', include('Site.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

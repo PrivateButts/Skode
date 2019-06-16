@@ -1,12 +1,6 @@
 from django.contrib import admin
 
-from .models import Price, CarouselItem
-
-
-@admin.register(Price)
-class PriceAdmin(admin.ModelAdmin):
-    model = Price
-    list_display = ['name', 'print_type', 'print_size', 'price']
+from .models import CarouselItem
 
 
 @admin.register(CarouselItem)

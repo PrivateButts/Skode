@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'raven.contrib.django.raven_compat',
+    'sorl.thumbnail',
 
     'Gallery',
     'Site'
@@ -134,3 +135,18 @@ RAVEN_CONFIG = {
     # release based on the git info.
     'release': raven.fetch_git_sha(os.path.abspath(BASE_DIR)),
 }
+
+# SORL Thumbnails
+THUMBNAIL_WATERMARK_POSITION = 'tile'
+THUMBNAIL_WATERMARK_OPACITY = .5
+THUMBNAIL_ENGINE = 'sorl_watermarker.engines.pil_engine.Engine'
+THUMBNAIL_WATERMARK = "watermark.png"
+
+if DEBUG:
+    THUMBNAIL_DEBUG = True
+    import logging
+    from sorl.thumbnail.log import ThumbnailLogHandler
+
+    handler = ThumbnailLogHandler()
+    handler.setLevel(logging.ERROR)
+    logging.getLogger('sorl.thumbnail').addHandler(handler)

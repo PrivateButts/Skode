@@ -1,6 +1,12 @@
 from django.contrib import admin
 
-from .models import Event, Client, Picture, Gallery
+from .models import Event, Client, Picture, Gallery, PricePoint
+
+
+@admin.register(PricePoint)
+class PricePointAdmin(admin.ModelAdmin):
+    model = PricePoint
+    list_display = ['name', 'print_type', 'print_size', 'price']
 
 
 class PictureInline(admin.StackedInline):

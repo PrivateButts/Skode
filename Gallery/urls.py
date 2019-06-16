@@ -2,16 +2,17 @@ from django.conf.urls import url, include
 from django.urls import path
 from django.contrib import admin
 
-from .views import EventList, GalleryByEventList, GalleryByClientList, PictureByGalleryList, PictureDetails, GalleriesFromEmail
+from . import views
 
-
+app_name = 'Gallery'
 urlpatterns = [
-    url(r'events/$', EventList.as_view()),
-    path('event/<int:id>/', GalleryByEventList.as_view()),
-    path('client/<int:id>/', GalleryByClientList.as_view()),
-    path('email/', GalleriesFromEmail.as_view()),
+    url(r'events/$', views.EventList.as_view()),
+    path('event/<int:id>/', views.GalleryByEventList.as_view()),
+    path('client/<int:id>/', views.GalleryByClientList.as_view()),
+    path('email/', views.GalleriesFromEmail.as_view()),
 
-    path('picture/<int:pk>/', PictureDetails.as_view()),
+    path('picture/<int:pk>/', views.PictureDetails.as_view()),
+    path('pictures/cart/', views.AddPrintsToCart, name='AddPrintsToCart'),
 
-    path('<int:id>/', PictureByGalleryList.as_view()),
+    path('<int:id>/', views.PictureByGalleryList.as_view()),
 ]

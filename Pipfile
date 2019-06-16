@@ -4,13 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
+django = "<2.2"
 pillow = "*"
 python-dotenv = "*"
 dj-database-url = "*"
 raven = "*"
-"mysqlclient" = "*"
 django-grappelli = "*"
+sorl-thumbnail = "*"
+sorl-watermark = {git = "https://github.com/originell/sorl-watermark.git", editable = true}
 
 [dev-packages]
 coverage = "*"

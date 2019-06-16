@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.views.generic import ListView, DetailView
 
 from .models import Client, Event, Picture, Gallery
@@ -67,3 +67,8 @@ class PictureByGalleryList(ListView):
 
 class PictureDetails(DetailView):
     model = Picture
+
+
+def AddPrintsToCart(request):
+    prints = request.POST.getlist('PriceOptions')
+    return redirect('Site:Cart')
